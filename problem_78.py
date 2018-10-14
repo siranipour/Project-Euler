@@ -22,17 +22,13 @@ def p(n):
 		k = list(k)
 		#Recursion formula from wiki article
 		func = lambda x: int((-1) ** (abs(x) - 1)) * p(n - pent(x))
-		answerArray =  list(map(func, k))
+		result =  sum(list(map(func, k)))
+		cache[n] = result
+		return result
 
-		answer = 0
-		for i in range(len(answerArray)):
-			answer += answerArray[i]
-		cache[n] = answer
-		return answer
-
-n = 0
-while p(n) % (10 ** 6) != 0:
-	n += 1
+# n = 0
+# while p(n) % (10 ** 6) != 0:
+# 	n += 1
 
 
-print(n)
+# print(n)
