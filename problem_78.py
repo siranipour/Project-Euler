@@ -26,9 +26,9 @@ def p(n):
 		cache[n] = result
 		return result
 
-# n = 0
-# while p(n) % (10 ** 6) != 0:
-# 	n += 1
+n = 0
+while p(n) % (10 ** 6) != 0:
+	n += 1
 
 
-# print(n)
+print("P(n) = 0 (mod 10^6) for n = {}" .format(n))
