@@ -4,12 +4,20 @@ import numpy as np
 def pent(k):
 	return int(k * (3 * k - 1) / 2)
 
-#Cache used for memoization
-cache = {}
+#Decorating a memoization feature
+def memoDec(func):
+	memo = {}
+
+	def memoWrapper(n):
+		if n not in memo:
+			memo[n] = func(n)
+		return memo[n]
+	return memoWrapper
+
+
+@memoDec
 def p(n):
-	if n in cache:
-		return cache[n]
-	elif n == 0:
+	if n == 0:
 		return 1
 	elif n < 0:
 		return 0
@@ -22,13 +30,10 @@ def p(n):
 		k = list(k)
 		#Recursion formula from wiki article
 		func = lambda x: int((-1) ** (abs(x) - 1)) * p(n - pent(x))
-		result =  sum(list(map(func, k)))
-		cache[n] = result
-		return result
+		return sum(list(map(func, k)))
 
 n = 0
 while p(n) % (10 ** 6) != 0:
 	n += 1
-
 
 print("P(n) = 0 (mod 10^6) for n = {}" .format(n))
