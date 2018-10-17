@@ -46,14 +46,16 @@ def unique(str):
 	return valid
 
 def test(n):
-	start = str(firstDigits(n))
 	end = str(lastDigits(n))
-	if '0' in start or '0' in end:
-		return False
-	elif unique(start) and unique(end):
-		return True
+	
+	if '0' not in end and unique(end):
+		start = str(firstDigits(n))
+		if '0' not in start and unique(start):
+			return True
 	else:
 		return False
+
+		
 	
 def main():
 	i = 450
