@@ -12,7 +12,7 @@ def main(n):
 	total = 0
 	for i in range(2, n + 1):
 		if i % 10 ** 4 == 0:
-			print("Progress is {}%".format(100 * i // 10**6))
+			print("Progress is {}%".format(100 * i // n))
 		total += phi(i)
 	t2 = time()
 	print("Result is {} calculated in {}s".format(total, t2 - t1))
