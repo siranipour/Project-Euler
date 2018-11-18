@@ -62,6 +62,8 @@ def main():
 	while not test(fib(i)):
 		i += 1
 		if i % 10 ** 3 == 0:
-			print(i)
+			sys.stdout.write(str(i))
+			sys.stdout.flush()
+			sys.stdout.write('\r')
 	print(i)
 
