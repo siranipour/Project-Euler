@@ -40,7 +40,8 @@ int main()
 			std::cout << i; 
 		}
 		unsigned int x = primed_product(i);
-		if(primed_product(2*i) == x && primed_product(3*i) == x && primed_product(4*i) == x && primed_product(5*i) == x && primed_product(6*i) == x)
+		if(primed_product(2*i) == x && primed_product(3*i) == x && primed_product(4*i) == x 
+	           && primed_product(5*i) == x && primed_product(6*i) == x)
 		{
 			std::cout << "\r" << std::flush;
 			std::cout << i << std::endl;

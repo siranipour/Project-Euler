@@ -92,7 +92,6 @@ def isLoop(A = [], B = [], C = [], D = [], E = [], F = []):
     F = np.array([[int(str(i)[:2]) for i in F],[int(str(i)[-2:]) for i in F]])
 
     failed = False
-
     while not failed:
         if not A.size:
             failed = True
